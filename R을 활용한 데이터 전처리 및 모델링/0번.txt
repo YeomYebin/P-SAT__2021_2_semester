@@ -1,0 +1,14 @@
+## 0번
+setwd("C:/Users/User/Desktop/2주차 패키지") 
+getwd()
+
+need_packages <- c("tidyverse", "ggplot2", "data.table", 'caret','randomForest', "progress", "xgboost", 'dummies')
+options(warn = -1)
+for(i in 1:length(need_packages)){
+  if(require(need_packages[i], character.only = T) == 0){
+    install.packages(need_packages[i])
+    require(need_packages[i], character.only = T)
+  }
+  else{require(need_packages[i], character.only = T)}
+}
+rm(list = ls())
